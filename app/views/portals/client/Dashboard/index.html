@@ -173,181 +173,75 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
-                    <button style=";padding:8px 20px;width:68%;margin:8px 0px;margin-left:60px;margin-top:-8px" >Parcourir les catégories</button>
+                    <button style=";padding:8px 20px;width:80%;margin:8px 0px;margin-left:60px;margin-top:-8px;
+                            font-size:20px;color:white;background-color: darkslategrey" id="btnCat" onclick="return showCat()">
+                        Parcourir les catégories</button>
                 </div>
+            </div>
+            <div style="border:black solid 2px;margin-left: 45px;margin-top: -8px;height: 200px;width: 1000px;" hidden id="cat-dropdown">
+                l,kmjhgfdcfgtzhuikujzhtgrfedwsqwderftgzhujiujzhtgrfedwsqwertgzh
+            </div>
+            <div class="row">
+
                 <!--Début insertion de produit en caroussel-->
                 <div class="container">
                     <h2 style="color: red"><strong>Occasion à saisir</strong></h2>
                     <!--***********************LA CAROUSSEL********************-->
-
-                    <!--<div class="container-fluid">
-                        <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner row w-100 mx-auto">
-                                <div class="carousel-item col-md-3 active">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/4.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 1</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 2</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/4.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 3</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 4</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 5</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 6</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Card 7</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>-->
-
-                    <!--Afficher quelques produits en mode caroussel-->
-                    <div class="row">
-                        #{list items:produits, as : 'produit'}
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="thumbnail">
-
-                                <a href="#">
-                                    <img src="${produit.imageProd}">
-                                    <div class="caption">
-                                        <p style="font-size:18px">${produit.description}</p>
-                                    </div>
-                                </a>
-
-                            </div>
-                        </div>
-                        #{/list}
-                    </div>
                 </div>
                 <!--Fin insertion de produit en caroussel-->
                 <!--3eme bloc-->
             </div>
+
+
             <div class="row">
                 <div class="panel" style="padding: 24px;">
                     <div class="panel-heading" style="background-color: #1b6d85;color: white;padding: 10px;font-size:20px"><strong>Top catégorie</strong></div>
-                    <div class="panel-body" style="background-color: blanchedalmond;padding: 10px">
-
+                    <div class="panel-body" style="background-color: cadetblue;padding: 10px">
                         <div class="row">
-                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                                <div class="card thumbnail">
-                                    <img class="card-img-top" src="../../../../../public/images/img/chem_4.jpeg" style="width:70%">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Mode et Beauté</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ajouter</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                                <div class="card thumbnail">
-                                    <img class="card-img-top" src="../../../../../public/images/img/high-tech-montres-connectees-trouver-des-produits-dam-sur-a-chemise-homme-avec-montre-connectee-avec-camera-1.jpg" style="width:70%">
-                                    <div class="card-body">
-                                        <h5 class="card-title">High Tech</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ajouter</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="col-sm-3 col-md-3 col-lg-6">
                                 <div class="card thumbnail" style="padding: 10px; margin: 10px">
-                                    <img class="card-img-top" src="../../../../../public/images/img/UT81mcPXgXaXXagOFbXx.jpg" style="width:55%">
+                                    <img class="card-img-top" src="../../../../../public/images/img/clarke-sanders-249798-unsplash.jpg" style="width:100%;">
                                     <div class="card-body">
-                                        <h5 class="card-title">Alimentation générale</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                        <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h3 class="card-title centered" style="position: absolute;top: 9%;left: 20%;transform: translate(-50%, -50%);color:red;">Mode et Beauté</h3></a>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-3 col-md-3 col-lg-6">
+                                <div class="col-sm-6">
+                                    <div class="card thumbnail" style="padding: 10px; margin: 10px">
+                                        <img class="card-img-top" src="../../../../../public/images/img/business-computer-connection-450035.jpg" style="width:100%;"/>
+                                        <div class="card-body">
+                                            <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h4 class="card-title centered" style="position: absolute;top: 20%;left: 25%;transform: translate(-50%, -50%);color:white;">High Tech</h4></a>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="card thumbnail" style="padding: 10px; margin: 10px">
+                                        <img class="card-img-top" src="../../../../../public/images/img/000172440_5_1.jpg" style="width:100%;"/>
+                                        <div class="card-body">
+                                            <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h4 class="card-title centered" style="position: absolute;top: 7%;left: 30%;transform: translate(-50%, -50%);color:black;">Electro-menager</h4></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card thumbnail" style="padding: 10px; margin: 10px">
+                                        <img class="card-img-top" src="../../../../../public/images/img/pexels-photo-459469.jpeg" style="width:100%;"/>
+                                        <div class="card-body">
+                                            <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h4 class="card-title centered" style="position: absolute;top: 20%;left: 50%;transform: translate(-50%, -50%);color:white;">Alimentation générale</h4></a>
+                                        </div>
+                                    </div>
 
-                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                                <div class="card thumbnail" style="padding: 10px; margin: 10px">
-                                    <img class="card-img-top" src="../../../../../public/images/img/piccoli-elettrodomestici-Smeg-thumbs3.jpg" style="width:100%">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Electro-menager</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card thumbnail" style="padding: 0px; margin: 10px">
+                                        <img class="card-img-top" src="../../../../../public/images/img/3.png" style="width:80%;">
+                                        <div class="card-body">
+                                            <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h3 class="card-title centered" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);color:white;">Voir toutes les catégories</h3></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                                <div class="card thumbnail" style="padding: 10px; margin: 10px">
-                                    <img class="card-img-top" src="../../../../../public/images/img/3.png" style="width:100%;">
-                                    <div class="card-body">
-                                        <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h5 class="card-title centered" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);color:white;">Voire toutes les catégories</h5></a>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -356,39 +250,22 @@
 
             <!--""""""""""""""""""""""""""""""""""""""""""""""""Le quatrième bloc"""""""""""""""""""""""""""""""""""""""""""""""""-->
             <div class="container">
-                <h2 style="color: black"><strong>Les marques à l'honneur</strong></h2>
+                <h3 style="color: black"><strong>Les marques à l'honneur</strong></h3></br>
                 <div class="row">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img id="myImg2" src="../../../../../public/images/img/transport-icon.png" style="width:50%">
-                            </a>
-                        </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <img src="../../../../../public/images/img/AS&P - DELISS 20180117_123826-2.jpg" style="width:70%">
                     </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:60%">
-                            </a>
-                        </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2" style="margin-bottom: 20px">
+                        <img src="../../../../../public/images/img/MEDAILLON 4x4cm Noumévivi.png" style="width:70%"/>
                     </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="../../../../../public/images/img/images.png" style="width:60%">
-                            </a>
-                        </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2" style="margin-bottom: 20px">
+                        <img src="../../../../../public/images/img/KA Coaching.jpg" style="width:70%">
                     </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="../../../../../public/images/img/transport-icon.png" style="width:60%">
-
-                            </a>
-                        </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2" style="margin-bottom: 20px">
+                        <img src="../../../../../public/images/img/logo_hype.JPG" style="width:70%">
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2" style="margin-bottom: 20px">
+                        <img src="../../../../../public/images/img/logo_maeboutik.jpeg" style="width:70%">
                     </div>
                 </div>
             </div>
@@ -398,77 +275,77 @@
 
             <!--"""""""""""""""""""""DEBUT 5EME BLOC""""""""""""""""""""""""-->
 
-            <div class="panel" style="padding: 10px">
-                <div class="panel-heading" style="background-color:dodgerblue;color: white;padding: 10px"><strong>Top Tendances high tech</strong></div>
-
-                <div class="panel-body" style="background-color: darkgrey;padding: 10px">
-
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                            <div class="card thumbnail">
-                                <img class="card-img-top" src="../../../../../public/images/img/ordinateur-high-tech-moderne.jpg" style="width:70%">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Ajouter</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                            <div class="card thumbnail">
-                                <img class="card-img-top" src="../../../../../public/images/img/des-ordinateurs-tablettes-7_4649592.jpg" style="width:75%">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Ajouter</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                            <div class="card thumbnail">
-                                <img class="card-img-top" src="../../../../../public/images/img/high-tech-montres-connectees-trouver-des-produits-agptek-sur-se-rapportant-a-chemise-homme-avec-montre-connectee-portable.jpg" style="width:50%">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mini-chaine wif murale</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Ajouter</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
-                            <div class="card thumbnail">
-                                <img class="card-img-top" src="../../../../../public/images/img/pc-vs-tablette-vs-smartphone.jpg" style="width:90%">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Ajouter</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <!-- <div class="panel" style="padding: 10px">
+                 <div class="panel-heading" style="background-color:dodgerblue;color: white;padding: 10px"><strong>Top Tendances high tech</strong></div>
+ 
+                 <div class="panel-body" style="background-color: darkgrey;padding: 10px">
+ 
+                     <div class="row">
+                         <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                             <div class="card thumbnail">
+                                 <img class="card-img-top" src="../../../../../public/images/img/ordinateur-high-tech-moderne.jpg" style="width:70%">
+                                 <div class="card-body">
+                                     <h5 class="card-title">Special title treatment</h5>
+                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                     <a href="#" class="btn btn-primary">Ajouter</a>
+                                 </div>
+                             </div>
+                         </div>
+ 
+ 
+                         <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                             <div class="card thumbnail">
+                                 <img class="card-img-top" src="../../../../../public/images/img/des-ordinateurs-tablettes-7_4649592.jpg" style="width:75%">
+                                 <div class="card-body">
+                                     <h5 class="card-title">Special title treatment</h5>
+                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                     <a href="#" class="btn btn-primary">Ajouter</a>
+                                 </div>
+                             </div>
+                         </div>
+ 
+                         <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                             <div class="card thumbnail">
+                                 <img class="card-img-top" src="../../../../../public/images/img/high-tech-montres-connectees-trouver-des-produits-agptek-sur-se-rapportant-a-chemise-homme-avec-montre-connectee-portable.jpg" style="width:50%">
+                                 <div class="card-body">
+                                     <h5 class="card-title">Mini-chaine wif murale</h5>
+                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                     <a href="#" class="btn btn-primary">Ajouter</a>
+                                 </div>
+                             </div>
+                         </div>
+ 
+                         <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                             <div class="card thumbnail">
+                                 <img class="card-img-top" src="../../../../../public/images/img/pc-vs-tablette-vs-smartphone.jpg" style="width:90%">
+                                 <div class="card-body">
+                                     <h5 class="card-title">Special title treatment</h5>
+                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                     <a href="#" class="btn btn-primary">Ajouter</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+ 
+                 </div>
+             </div>-->
 
             <!--""""""""""""""""""Fin 5eme bloc"""""""""""""""""""-->
 
 
             <!--"""""""""""""""""""""DEBUT 6 EME BLOC""""""""""""""""""""""""-->
             #{list items:categories, as : 'categorie'}
-            
+
             <div class="panel" style="padding: 10px">
-                <div class="panel-heading" style="background-color:lightcoral;color: white;padding: 10px"><strong>${categorie.libCategorie}</strong></div>
-                <div class="panel-body" style="background-color: darkgray;padding: 10px">
+                <div class="panel-heading" style="background-color:${categorie.couleur};color: white;padding: 10px"><strong>${categorie.libCategorie}</strong></div>
+                <div class="panel-body" style="background-color: aliceblue;padding: 10px">
 
                     <div class="row">
-                        #{list items:produits, as : 'produit'}
+                        #{list items:categorie.getProduits(), as : 'produit'}
 
                         <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
                             <div class="card thumbnail">
-                                <img class="card-img-top" src="${produit.imageProd}">
+                                <img class="card-img-top" src="${produit.imageProd}" style="width: 70%">
                                 <div class="card-body">
                                     <h5 class="card-title">${produit.libProduit}</h5>
                                     <p class="card-text">${produit.description}</p>
@@ -608,17 +485,21 @@
             <div style="padding: 0px; background-color: cadetblue;color: white;">
                 <h3 style="text-align: center">Réglez vos achats simplement</h3></br>
                 <div class="row" style="text-align: center">
-                    <div class="col-3">
+                    <div class="col-sm-3">
+                        <h4><a  style="color:white">Transfert</a></h4>
+                        <img src="../../../../../public/images/img/ECH22228122_1.jpg" style="width:50%" alt=""/>
                     </div>
-                    <div class="col-3">
-                        <h5><a>Mon porte-monnaie électronique</a></h5>
-                        <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:30%">
+                    <div class="col-sm-3">
+                        <h4><a style="color:white">Mon porte-monnaie électronique</a></h4>
+                        <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:50%">
                     </div>
-                    <div class="col-3">
-                        <h5><a>Ma carte bancaire</a></h5>
-                        <img src="../../../../../public/images/img/transport-icon.png" style="width:50%">
+                    <div class="col-sm-3">
+                        <h4><a  style="color:white">Ma carte bancaire</a></h4>
+                        <img src="../../../../../public/images/img/Picto_paiement_1.png" style="width:40%">
                     </div>
-                    <div class="col-3">
+                    <div class="col-sm-3">
+                        <h4><a  style="color:white">Paiement sur place</a></h4>
+                        <img src="../../../../../public/images/img/picto-aode-negociation.png" style="width:50%" alt=""/>
                     </div>
                 </div>
             </div>
@@ -759,7 +640,18 @@
             <!--"********************************************FIN DU BAS DE PAGE****************************************************-->
 
             <script>
-                
+                function showCat() {
+
+                    $("#btnCat").click(function () {
+                        $("#cat-dropdown").show();
+                    });
+                }
+
+
+
+
+
+
             </script>
 
         </div>

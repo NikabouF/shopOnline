@@ -79,4 +79,5 @@ public class Produit extends Model {
         Categorie categorie = models.Categorie.findById(this.id);
         return categorie.getLibCategorie();
     }
+    
 }
