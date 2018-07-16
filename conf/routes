@@ -1,0 +1,52 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Import Secure routes
+*      /                                         module:secure
+# Home page
+GET     /                                       secure.login
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+GET     /data/                                staticDir:data
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+
+*      /portals/client                          portals.client.dashboard.index
+*      /portals/client/{controller}/{action}    portals.client.{controller}/{action} 
+
+*      /portals/admin                          portals.admin.dashboard.index
+*      /portals/admin/{controller}/{action}    portals.admin.{controller}/{action} 
+
+*      /portals/client                          portals.client.dashboard.pageCategorie
+*      /portals/client/{controller}/{action}    portals.client.{controller}/{action} 
+
+*      /portals/client                          portals.client.dashboard.pageCategorie
+*      /portals/client/{controller}/{action}    portals.client.{controller}/{action}
+
+*      /portals/admin                          portals.admin.dashboard.actionsA
+
+*      /portals/admin                          portals.admin.dashboard.enregCat
+
+*      /portals/client                          portals.client.dashboard.compteClient
+
+*      /portals/agent                          portals.agent.dashboard.index
+
+*      /portals/livreur                        portals.livreur.dashboard.index
+
+*      /portals/client                         portals.client.dashboard.achatClient
+
+*      /portals/client                         portals.client.dashboard.pageModeLiv
+
+*      /portals/client                         portals.client.dashboard.pageModePaie
+
+*      /portals/client                         portals.client.dashboard.pageConfirmCom
+
+*      /portals/client                         portals.client.dashboard.pageFin
+
+*      /portals/client                         portals.client.dashboard.panier
+

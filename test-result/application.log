@@ -1,0 +1,9 @@
+12 juil. 2018 12:00:28,340 INFO  ~ Starting F:\Mes_Dossiers\IAI-COURS\MA-DEUXIEME-ANNEE\STAGE\Application
+12 juil. 2018 12:00:28,983 INFO  ~ Module crud is available (C:\play-1.3.4\modules\crud)
+12 juil. 2018 12:00:28,996 INFO  ~ Module secure is available (C:\play-1.3.4\modules\secure)
+12 juil. 2018 12:00:30,410 WARN  ~ You're running Play! in DEV mode
+12 juil. 2018 12:00:30,775 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+12 juil. 2018 12:00:47,951 INFO  ~ Connected to jdbc:mysql://localhost/shoponline?useUnicode=yes&connectionCollation=utf8_general_ci&characterEncoding=UTF-8 for default
+12 juil. 2018 12:00:50,614 INFO  ~ Application 'ShopOnline' is now started !
+12 juil. 2018 12:03:09,552 INFO  ~ Connected to jdbc:mysql://localhost/shoponline?useUnicode=yes&connectionCollation=utf8_general_ci&characterEncoding=UTF-8 for default
+12 juil. 2018 12:05:23,928 INFO  ~ Connected to jdbc:mysql://localhost/shoponline?useUnicode=yes&connectionCollation=utf8_general_ci&characterEncoding=UTF-8 for default

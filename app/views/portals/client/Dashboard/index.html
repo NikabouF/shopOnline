@@ -1,0 +1,765 @@
+#{extends 'main.html' /}
+
+<html>
+    <head>
+        <title>ShopOnline</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+        body {
+            font-family: "Times New Roman";
+            margin: 0;
+        }
+
+        /* Header/logo Title */
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: lightblue;
+            color: white;
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* Style the top navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Right-aligned link */
+        .navbar a.right {
+            float: right;
+        }
+
+        /* Column container */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: black;
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            /* show 4 items */
+            .carousel-inner .active,
+            .carousel-inner .active + .carousel-item,
+            .carousel-inner .active + .carousel-item + .carousel-item,
+            .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+                display: block;
+            }
+
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+            .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+                transition: none;
+            }
+
+            .carousel-inner .carousel-item-next,
+            .carousel-inner .carousel-item-prev {
+                position: relative;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                position: absolute;
+                top: 0;
+                right: -25%;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+
+            /* left or forward direction */
+            .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+            .carousel-item-next.carousel-item-left + .carousel-item,
+            .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+            .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+            .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                position: relative;
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+
+            /* farthest right hidden item must be absolue position for animations */
+            .carousel-inner .carousel-item-prev.carousel-item-right {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+
+            /* right or prev direction */
+            .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+            .carousel-item-prev.carousel-item-right + .carousel-item,
+            .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+            .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+            .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                position: relative;
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+                display: block;
+                visibility: visible;
+            }
+        }
+
+
+    </style>
+
+    <body>
+        <div class="navbar" style="font-size: 20px">
+            <!-- Brand -->
+            <div class="navbar-header">
+                <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: -30px"><strong>Online</strong></ul></ul>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <a class="nav-link" href="#" style="font-size: 20px;margin-right:20px"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
+                <a class="nav-link dropdown-toggle" href="#" style="font-size: 20px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-user"></span> Connexion</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Mon compte</a>
+                    <a class="dropdown-item" href="#">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+        <!--Insertion d'image-->
+        <div id="block" class="bg">
+            <img class="img-responsive" src="../../../../../public/images/img/faire-son-shopping-comme-une-pro.jpg" style="margin-left:60px">
+        </div>
+        <!--Fin Insertion d'image-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <button style=";padding:8px 20px;width:68%;margin:8px 0px;margin-left:60px;margin-top:-8px" >Parcourir les catégories</button>
+                </div>
+                <!--Début insertion de produit en caroussel-->
+                <div class="container">
+                    <h2 style="color: red"><strong>Occasion à saisir</strong></h2>
+                    <!--***********************LA CAROUSSEL********************-->
+
+                    <!--<div class="container-fluid">
+                        <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner row w-100 mx-auto">
+                                <div class="carousel-item col-md-3 active">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/4.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 1</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 2</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/4.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 3</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 4</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 5</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 6</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="../../../../../public/images/img/406878.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Card 7</h4>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>-->
+
+                    <!--Afficher quelques produits en mode caroussel-->
+                    <div class="row">
+                        #{list items:produits, as : 'produit'}
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="thumbnail">
+
+                                <a href="#">
+                                    <img src="${produit.imageProd}">
+                                    <div class="caption">
+                                        <p style="font-size:18px">${produit.description}</p>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                        #{/list}
+                    </div>
+                </div>
+                <!--Fin insertion de produit en caroussel-->
+                <!--3eme bloc-->
+            </div>
+            <div class="row">
+                <div class="panel" style="padding: 24px;">
+                    <div class="panel-heading" style="background-color: #1b6d85;color: white;padding: 10px;font-size:20px"><strong>Top catégorie</strong></div>
+                    <div class="panel-body" style="background-color: blanchedalmond;padding: 10px">
+
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-top" src="../../../../../public/images/img/chem_4.jpeg" style="width:70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mode et Beauté</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-top" src="../../../../../public/images/img/high-tech-montres-connectees-trouver-des-produits-dam-sur-a-chemise-homme-avec-montre-connectee-avec-camera-1.jpg" style="width:70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">High Tech</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail" style="padding: 10px; margin: 10px">
+                                    <img class="card-img-top" src="../../../../../public/images/img/UT81mcPXgXaXXagOFbXx.jpg" style="width:55%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alimentation générale</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail" style="padding: 10px; margin: 10px">
+                                    <img class="card-img-top" src="../../../../../public/images/img/piccoli-elettrodomestici-Smeg-thumbs3.jpg" style="width:100%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Electro-menager</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail" style="padding: 10px; margin: 10px">
+                                    <img class="card-img-top" src="../../../../../public/images/img/3.png" style="width:100%;">
+                                    <div class="card-body">
+                                        <a href="@{controllers.portals.client.Dashboard.pageCategorie()}"><h5 class="card-title centered" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);color:white;">Voire toutes les catégories</h5></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Fin Les autres catalogues 3eme bloc-->
+
+            <!--""""""""""""""""""""""""""""""""""""""""""""""""Le quatrième bloc"""""""""""""""""""""""""""""""""""""""""""""""""-->
+            <div class="container">
+                <h2 style="color: black"><strong>Les marques à l'honneur</strong></h2>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img id="myImg2" src="../../../../../public/images/img/transport-icon.png" style="width:50%">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:60%">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="../../../../../public/images/img/images.png" style="width:60%">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="../../../../../public/images/img/transport-icon.png" style="width:60%">
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--"""""""""""""""""""""""""""""""""""""""""""""""""FIN DU 4e BLOC""""""""""""""""""""""""""""""""""""""-->
+
+
+            <!--"""""""""""""""""""""DEBUT 5EME BLOC""""""""""""""""""""""""-->
+
+            <div class="panel" style="padding: 10px">
+                <div class="panel-heading" style="background-color:dodgerblue;color: white;padding: 10px"><strong>Top Tendances high tech</strong></div>
+
+                <div class="panel-body" style="background-color: darkgrey;padding: 10px">
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/ordinateur-high-tech-moderne.jpg" style="width:70%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/des-ordinateurs-tablettes-7_4649592.jpg" style="width:75%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/high-tech-montres-connectees-trouver-des-produits-agptek-sur-se-rapportant-a-chemise-homme-avec-montre-connectee-portable.jpg" style="width:50%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mini-chaine wif murale</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/pc-vs-tablette-vs-smartphone.jpg" style="width:90%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--""""""""""""""""""Fin 5eme bloc"""""""""""""""""""-->
+
+
+            <!--"""""""""""""""""""""DEBUT 6 EME BLOC""""""""""""""""""""""""-->
+            #{list items:categories, as : 'categorie'}
+            
+            <div class="panel" style="padding: 10px">
+                <div class="panel-heading" style="background-color:lightcoral;color: white;padding: 10px"><strong>${categorie.libCategorie}</strong></div>
+                <div class="panel-body" style="background-color: darkgray;padding: 10px">
+
+                    <div class="row">
+                        #{list items:produits, as : 'produit'}
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="${produit.imageProd}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${produit.libProduit}</h5>
+                                    <p class="card-text">${produit.description}</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+                        #{/list}
+                    </div>
+                </div>
+            </div>
+            #{/list}
+            <!--""""""""""""""""""Fin 6eme bloc"""""""""""""""""""-->
+
+
+            <!--"********************************************DEBUT 7EME BLOC****************************************************-->
+
+            <!--<div class="panel" style="padding: 10px;margin-bottom: 10px">
+                <div class="panel-heading" style="background-color:deeppink;color: white;padding: 10px"><strong>Top Produits Mode et beauté</strong></div>
+                <div class="panel-body" style="background-color: grey;padding: 10px">
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/40800791331.jpg" style="width:49%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/15-produits-de-beaute-de-luxe-qui-nous-font-rever.jpg" style="width:42%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produits de beauté</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/petite-top-bardot-vert-structure-femme-a-la-mode-nouveaux-produits-10-elasthanne--1672-500x500_0.jpg" style="width:53%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/MP02807683.jpg" style="width:53%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/G_24778235_243_VFP_1.jpg" style="width:52%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/anti-age-produits-2015.png" style="width:97%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produits anti-âge</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/43%20Banana%20Moon%20Intimates%20Lingerie%20Top%20Intimates%20Timeless%20Kelby%20beige%20-%20Produits%20de%20mode%20prix%20r%20duit%2029531.jpg" style="width:57%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mini-chaine wif murale</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                            <div class="card thumbnail">
+                                <img class="card-img-top" src="../../../../../public/images/img/Homme%20Chemise%20manches%20longues%20Classique%20-%20France%20Top%20produits%20Vente%20en%20gros%2041716458%20Jack%20Jones%20V%20tements%20-%2042%204991.jpg" style="width:57%">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mini-chaine wif murale</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>-->
+
+            <!--"********************************************FIN DU 7EME BLOC****************************************************-->
+
+
+            <!--"********************************************DEBUT DU 8EME BLOC****************************************************-->
+
+
+
+
+
+
+            <!--"********************************************FIN DU 8EME BLOC****************************************************-->
+
+
+
+            <!--"********************************************DEBUT DU 9EME BLOC****************************************************-->
+
+
+            <div style="padding: 0px; background-color: cadetblue;color: white;">
+                <h3 style="text-align: center">Réglez vos achats simplement</h3></br>
+                <div class="row" style="text-align: center">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-3">
+                        <h5><a>Mon porte-monnaie électronique</a></h5>
+                        <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:30%">
+                    </div>
+                    <div class="col-3">
+                        <h5><a>Ma carte bancaire</a></h5>
+                        <img src="../../../../../public/images/img/transport-icon.png" style="width:50%">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--"********************************************FIN DU 9EME BLOC****************************************************-->
+
+
+
+            <!--"********************************************DEBUT DU BAS DE PAGE****************************************************-->
+
+            <!-- Footer -->
+            <footer class="footer">
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MON COMPTE</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a href="#">Mon panier</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <a href="#">Mon porte-monnaie électronique</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ShopOnline & CO</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a href="#">Le Shop</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a href="#">Les autres sociétés</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a href="#">Recrutement</a>
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">PARTENAIRES</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a href="#">Shopping Online</a>
+                                    </p>
+                                </li>
+                                <!-- <li>
+                                     <a href="#">Link 2</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">Link 3</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">Link 4</a>
+                                 </li>-->
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RETROUVEZ-NOUS</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                    </p>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                    <a href="#"> ShopOnline.com</a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+
+            <!--"********************************************FIN DU BAS DE PAGE****************************************************-->
+
+            <script>
+                
+            </script>
+
+        </div>

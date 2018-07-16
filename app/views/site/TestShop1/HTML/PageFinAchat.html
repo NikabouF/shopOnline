@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <!--Pour permettre la responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finaliser mes achats</title>
+    <!--Je fais le lien avec les fichier css et js de bootstrap-->
+
+
+    <link rel="stylesheet" href="../../../../../public/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../../../public/lib/Style.css">
+    <script src="../../../../../public/lib/JsGalerie.js"></script>
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid">
+
+    <br class="row">
+
+        <!--"""""""""""""""""""""""""""""""""""""""Mon navbar"""""""""""""""""""""""""""""""""""""""""""""-->
+        <div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop<a class="navbar-brand" style="color: palevioletred; font-size: 40px"><strong>Online</strong></a></strong></a>
+                    </div>
+                    <ul class="nav navbar-nav" style="font-size: 20px">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Actualités</a></li>
+                        <li><a href="#">Annonces</a></li>
+                        <li><a href="#">Shop</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" style="font-size: 20px" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+
+                        <!--Le modal-->
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Créer un nouveau panier</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Vous allez acheter des articles</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"><a>Créer un panier</a></button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <!--Fin du modal-->
+
+                        <li><a href="#" style="font-size: 20px"><span class="glyphicon glyphicon-user"></span> Déconnexion</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        <!--"""""""""""""""""""""""""""""""""""""""Fin du navbar""""""""""""""""""""""""""""""""""""""""""""-->
+
+
+
+        <!--Insertion d'image-->
+        <div id="block" class="bg">
+            <img class="img-responsive" src="../../../../../public/images/img/faire-son-shopping-comme-une-pro.jpg" alt="">
+        </div>
+        <!--Fin Insertion d'image-->
+
+
+        <h3 style="font-family: cursive;text-align: center; font-size: 40px">Finaliser mes achats</h3>
+
+
+        <!--Afficher le processus d'achat-->
+
+
+
+        <!--Fin affichage de processus-->
+
+        <div>
+
+        </div>
+
+        <!--Radio group-->
+
+        <div class="form-check">
+            <input onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio100">
+            <label class="form-check-label" for="radio100">J'ai un compte</label>
+        </div>
+
+        <div class="form-check">
+            <input onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio101">
+            <label class="form-check-label" for="radio101">Je n'ai pas de compte</label>
+        </div>
+
+        <!--Radio group-->
+
+
+        <!--"""""""""""""""""""""""""""""J'ai un compte""""""""""""""""""""""""""""""""""""""""""""-->
+
+        <div id="id01" class="modal" style="width: auto;position: relative">
+
+            <form class="modal-content animate" style="width: 45%">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img style="width: 40%; border-radius: 50%; background-color: lightblue" src="../../../../../public/images/img/login.png" class="avatar">
+                </div>
+
+                <div class="container" style="width: auto">
+                    <label for="uname"><b>Nom utilisateur</b></label>
+                    <input type="text" placeholder="Entrer votre nom d'utilisateur" name="uname" required>
+
+                    <label for="psw"><b>Mot de passe</b></label>
+                    <input type="password" placeholder="Entrer votre mot de passe" name="psw" required>
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1; width: auto">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
+
+                </div>
+            </form>
+        </div>
+
+
+        <!--"""""""""""""""""""""""""""FIN de J'ai un compte""""""""""""""""""""""""""""""""""""""""""""-->
+
+
+        <!--"""""""""""""""""""""""""""""Je n'ai pas un compte""""""""""""""""""""""""""""""""""""""""""""-->
+
+        <div id="id02" class="modal" style="width: auto; position: relative">
+
+            <form class="modal-content animate" style="width: 45%">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img style="width: 40%; border-radius: 50%; background-color: lightblue" src="../../../../../public/images/img/login.png" class="avatar">
+                </div>
+
+                <div class="container" style="width: auto">
+                    <label for="uname1"><b>Nom</b></label>
+                    <input type="text" placeholder="Entrer votre nom" name="uname1" required>
+
+                    <label for="uemail"><b>Email</b></label>
+                    <input type="email" style="margin: 8px 0px; width: 100%; padding: 10px 10px" placeholder="johnson@gmail.com" name="uemail" required>
+
+                    <label for="utel"><b>Téléphone</b></label>
+                    <input type="tel" style="width: 100%; padding: 10px 10px" name="utel" required>
+
+                    <label for="uville"><b>Ville</b></label>
+                    <input type="text" style="width: 100%; padding: 10px 10px" name="uville" required>
+
+                    <label for="uqtier"><b>Quartier</b></label>
+                    <input type="text" style="width: 100%; padding: 10px 10px"  name="uqtier" required>
+
+                    <label for="psw1"><b>Mot de passe</b></label>
+                    <input type="password" style="padding: 10px 10px" name="psw1" required>
+
+                    <label for="psw2"><b>Confirmez votre mot de passe</b></label>
+                    <input type="password" style="padding: 10px 10px" name="psw2" required>
+
+                    <button type="submit" style="width: 30%">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1; width: auto">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Annuler</button>
+
+                </div>
+            </form>
+        </div>
+
+        <!--"""""""""""""""""""""""""""""FIN de Je n'ai pas un compte""""""""""""""""""""""""""""""""""""""""""""-->
+
+
+<!--*******************************Les boutons de retour et de continuation******************************************-->
+<div>
+    <a href="PagePanier.html"><button style="background-color: dodgerblue; text-decoration-color: white; width:30%; border-radius: 50px;border-color: navy;padding: 7px 0px;text-align: center;text-decoration: white">Retour au panier</button></a>
+    <a href="#"><button style="background-color: #122b40;text-decoration-color: white; width: 50%; border-radius: 30px;border-color: #0f0f0f;padding: 7px 0px">Continuer au mode de livraison</button></a>
+</div>
+<!--*******************************Fin boutons  retour et continuation******************************************-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--"********************************************DEBUT DU BAS DE PAGE****************************************************-->
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MON COMPTE</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Mon panier</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Mon porte-monnaie électronique</a>
+                                </p>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">AFRIBILLS & CO</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">La société</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Les autres sociétés</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Recrutement</a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">PARTENAIRES</h5>
+
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>
+                                    <a href="#">Vendez sur CountryPocket</a>
+                                </p>
+
+                            </li>
+                            <!-- <li>
+                                 <a href="#">Link 2</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 3</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 4</a>
+                             </li>-->
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RETROUVEZ-NOUS</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> ShopOnline.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+        <!--"********************************************FIN DU BAS DE PAGE****************************************************-->
+
+    </div>
+</div>
+
+<!--*********************************Quelques script**************************************************-->
+
+<!--Script pour la fermeture du modal de connexion-->
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+
+            var modal = document.getElementById('id02');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+
+        }
+    </script>
+<script src="../../../../../public/jquery/jquery-3.3.1.js"></script>
+<script src="../../../../../public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../../../../public/jquery/popper.min.js"></script>
+</body>
+</html>

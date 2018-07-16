@@ -1,0 +1,74 @@
+#{extends 'Secure/layout.html' /}
+#{extends 'main.html' /}
+
+<!--<img src="../../../public/images/img/pexels-photo-1103970.jpeg" alt=""/>-->
+<!--<img src="../../../public/images/img/5906677-background-wallpaper.jpg" alt=""/>-->
+<!--<img src="../../../public/images/img/blue-abstract-background-56.jpg" alt=""/>-->
+
+<link href="../../../public/bootstrap/dist/css/mdb.min.css" rel="stylesheet" type="text/css"/>
+<style>
+    .full-bg { 
+        background: url('../../../public/images/img/pexels-photo-1103970.jpeg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+<body class="full-bg">
+
+    <div class="container border-top border-success" style="">
+        <div class="row form-group" id="form-log">
+            <form action="@{Secure.authenticate()}" method="POST">
+                <div class="row form-group">
+                    #{if flash.error}
+                    <div class="alert alert-danger">
+                        <p class="aler">
+                            &{flash.error}
+                        </p>
+                    </div>
+                    #{/if}
+
+                    #{if flash.success}
+                    <div class="alert alert-success">
+                        <p class="success">
+                            &{flash.success}
+                        </p>
+                    </div>
+                    #{/if}
+
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="card card-responsive" style="padding:60px;background-color: white;margin-top:15%;">
+                            <div class="card-header text-center" style="margin-top:0px;padding-top:0px;font-size:17px">
+                                <h3 style="color:royalblue;font-size:40px;font-family:-webkit-body;margin-top:0px">Authentification</h3></br>
+                            </div>
+                            <div class="card-body">
+                                <div class="col-sm-12">
+                                    <label for="Username"><b>Login</b></label>
+                                    <input type="text" placeholder="Entrez votre nom d'utilisateur" name="username" id="username" value="${flash.username}" autocomplete="off">
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <label for="pwd"><b>Mot de passe</b></label>
+                                    <input type="password" placeholder="Entrez votre mot de passe" name="password" id="password" value="" autocomplete="off">
+                                </div>
+                                </br>
+                                <div class="row form-group text-center">
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6 pull-right"><button type="reset" class="btn btn-danger" style="font-size:14px">Annuler</button> </div> 
+                                        <div class="col-sm-6 pull-right">  <button type="submit" id="signin" class="btn btn-success" style="font-size:14px">Se connecter</button> </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</body>

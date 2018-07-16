@@ -1,0 +1,323 @@
+#{extends 'main.html' /}
+
+<html>
+    <head>
+        <title>Gestion de ShopOnline</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+        body {
+            font-family: "Times New Roman";
+            margin: 0;
+        }
+
+        /* Header/logo Title */
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: lightblue;
+            color: white;
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* Style the top navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Right-aligned link */
+        .navbar a.right {
+            float: right;
+        }
+
+        /* Change color on hover */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Column container */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
+
+        /* Create two unequal columns that sits next to each other */
+        /* Sidebar/left column */
+        .side {
+            -ms-flex: 30%; /* IE10 */
+            flex: 10%;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        /* Main column */
+        .main {
+            -ms-flex: 70%; /* IE10 */
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        /* Fake image, just for this example */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: black;
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="header" style="background: antiquewhite;padding: 0px">
+            <h1 style="color: #122b40; font-family: fantasy">Page de gestion de ShopOnline</h1>
+        </div>
+        <div class="navbar" style="font-size: 20px">
+            <!-- Brand -->
+            <div class="navbar-header">
+                <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: -30px"><strong>Online</strong></ul></ul>
+            </div>
+            <!-- Links -->
+            <a href="@{controllers.portals.agent.Dashboard.index}">Accueil</a>
+            <a href="@{controllers.portals.agent.Dashboard.enregCommande}">Commandes</a>
+            <a href="@{controllers.portals.agent.Dashboard.enregLivraison}">Livraisons</a>
+            <a href="@{controllers.portals.agent.Dashboard.enregReglement}">Règlements</a>
+            <a href="@{controllers.portals.agent.Dashboard.consultation}">Consultation</a>
+            <a href="#">Notifications</a>
+            <a class="right" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Connexion
+            </a>
+            <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Mon compte</a>
+                <a class="dropdown-item" href="#">Déconnexion</a>
+
+            </div>-->
+        </div>
+        <br>
+
+
+        <!--"""""""""""""""""""""""""""""""""""""""Fin du navbar""""""""""""""""""""""""""""""""""""""""""""-->
+        <div class="container">
+            <h3 style="font-family: cursive">Gestion de ShopOnline</h3></br>
+            <p>Enregistrement d'un règlement</p>
+
+            <div class="nav nav-tabs"></div>
+            <ul class="nav nav-tabs" id="myTabs" style="font-size:22px">
+                <li class="nav-items"><a class="nav-link" id="CCat-tab" data-toggle="tab" href="#CCat" role="tab" aria-controls="CCat" aria-selected="true">Catégories de produits</a></li>
+                <li class="nav-items"><a class="nav-link" id="CProd-tab" data-toggle="tab" href="#CProd" role="tab" aria-controls="CProd" aria-selected="false">Produits</a></li>
+                <li class="nav-items"><a class="nav-link" id="CCom-tab" data-toggle="tab" href="#CCom" role="tab" aria-controls="CCom" aria-selected="false">Commandes</a></li>
+                <li class="nav-items"><a class="nav-link" id="CReg-tab" data-toggle="tab" href="#CReg" role="tab" aria-controls="CReg" aria-selected="false">Règlements</a></li>
+                <li class="nav-items"><a class="nav-link" id="CLiv-tab" data-toggle="tab" href="#CLiv" role="tab" aria-controls="CLiv" aria-selected="false">Livraisons</a></li>
+            </ul>
+            </br>
+            <div class="tab-content" id="myTabContent0">
+
+                <div class="tab-pane fade show active" id="CCat" role="tabpanel" aria-labelledby="CCat-tab">
+                </div>
+
+                <div class="tab-pane fade" id="CProd" role="tabpanel" aria-labelledby="CProd-tab">
+                </div>
+
+                <div class="tab-pane fade" id="CCom" role="tabpanel" aria-labelledby="CCom-tab">
+                </div>
+
+                <div class="tab-pane fade" id="CReg" role="tabpanel" aria-labelledby="CReg-tab">
+                </div>
+
+                <div class="tab-pane fade" id="CLiv" role="tabpanel" aria-labelledby="CLiv-tab">
+                </div>
+
+            </div>
+        </div>
+
+        <!--*****************************************************************************************************************************-->
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MON COMPTE</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Mon panier</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Mon porte-monnaie électronique</a>
+                                </p>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">AFRIBILLS & CO</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">La société</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Les autres sociétés</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Recrutement</a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">PARTENAIRES</h5>
+
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>
+                                    <a href="#">Vendez sur CountryPocket</a>
+                                </p>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RETROUVEZ-NOUS</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> ShopOnline.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+
+    </body>
+</html>

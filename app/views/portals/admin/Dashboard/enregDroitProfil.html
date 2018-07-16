@@ -1,0 +1,369 @@
+#{extends 'main.html' /}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Page d'administrattion de ShopOnline</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* Style the body */
+            body {
+                font-family: "Times New Roman";
+                margin: 0;
+            }
+
+            /* Header/logo Title */
+            .header {
+                padding: 50px;
+                text-align: center;
+                background: lightblue;
+                color: white;
+            }
+
+            /* Increase the font size of the heading */
+            .header h1 {
+                font-size: 40px;
+            }
+
+            /* Style the top navigation bar */
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            /* Style the navigation bar links */
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+
+            /* Right-aligned link */
+            .navbar a.right {
+                float: right;
+            }
+
+            /* Change color on hover */
+            .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Column container */
+            .row {
+                display: -ms-flexbox; /* IE10 */
+                display: flex;
+                -ms-flex-wrap: wrap; /* IE10 */
+                flex-wrap: wrap;
+            }
+
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+                -ms-flex: 30%; /* IE10 */
+                flex: 10%;
+                background-color: #f1f1f1;
+                padding: 20px;
+            }
+
+            /* Main column */
+            .main {
+                -ms-flex: 70%; /* IE10 */
+                flex: 70%;
+                background-color: white;
+                padding: 20px;
+            }
+
+            /* Fake image, just for this example */
+            .fakeimg {
+                background-color: #aaa;
+                width: 100%;
+                padding: 20px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                background: black;
+            }
+
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+                .row {
+                    flex-direction: column;
+                }
+            }
+
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+                .navbar a {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="header" style="background: bisque;padding: 0px">
+            <h1 style="color: #122b40; font-family: fantasy">Page d'administration de ShopOnline</h1>
+        </div>
+
+        <div class="navbar" style="font-size: 20px">
+            <a class="nav-link" href="@{controllers.portals.admin.Dashboard.index()}">Accueil</a>
+            <a href="@{controllers.portals.admin.Dashboard.enregCat()}">Catégories</a>
+            <a href="@{controllers.portals.admin.Dashboard.enregProd()}">Produits</a>
+            <a href="@{controllers.portals.admin.Dashboard.enregDroitProfil()}">Droits et profils</a>
+            <a href="@{controllers.portals.admin.Dashboard.actionsA()}">Comptes</a>
+            <a href="@{controllers.portals.admin.Dashboard.consultations()}">Consultations</a>
+            <a href="#">Journalisation</a>
+            <a href="#" class="right">Connexion</a>
+        </div>
+
+        <div class="container">
+            <h3 style="font-family: cursive;color:darkcyan">Gestion de ShopOnline</h3></br>
+            <!--Pour enrégistrer un droit-->
+            <h3 style="color:brown">***Enrégistrer un droit</h3>
+            <form style="font-size:20px" action="@{controllers.portals.admin.Droits.saveDroit()}" method="post">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label" for="libelleDroit">Libellé du droit</label>
+                        <input name="libelleDroit" type="text" class="form-control" id="libelleDroit">
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group"></br>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2" style="margin-top: 2rem">
+                        <button type="submit" class="btn btn-success" style="font-size:17px">Enregistrer</button></br>
+                    </div>  </br>
+                    <div class="col-sm-2" style="margin-top: 2rem">
+                        <button type="reset" class="btn btn-primary" style="font-size:17px">Annuler</button>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            </form>
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-10">
+                    <form style="font-size:20px" action="@{controllers.portals.admin.ProfilsDroits.saveProfilDroit()}" method="post">
+                        <p><h3 style="color:brown">***Enrégistrer un profil et attribuez lui des droits </h3></p>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label" for="libelleProfil">Libellé du profil</label>
+                                <input name="libelleProfil" type="text" class="form-control" id="libelleProfil">
+                            </div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-6">
+                                <h3><p>Attribuer des droits à ce profil et enregistrez</p></h3>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Libellé du profil</th>
+                                    <th>Ajouter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                #{list items:droits, as : 'droit'}
+                                <tr> 
+                                    <td>${droit.libelleDroit}</td>
+                                    <td><input type="checkbox" name="choixDroit[]" value="${droit.id}"></td>
+                                </tr>
+                                #{/list}
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-success" style="font-size:17px">Enregistrer</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="cancel" class="btn btn-primary" style="font-size:17px">Annuler</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--*****************************************************************************************************************************-->        
+        <!-- Footer -->
+        <footer class="footer" style="padding:0px">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white;">NOTRE COMPTE</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Nos ventes</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Nos bénéfices</a>
+                                </p>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"  style="color: white;">AFRIBILLS & CO</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">La société</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Les autres sociétés</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Recrutements</a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"  style="color: white;">PARTENAIRES</h5>
+
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>
+                                    <a href="#">Vendez sur CountryPocket</a>
+                                </p>
+
+                            </li>
+                            <!-- <li>
+                                 <a href="#">Link 2</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 3</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 4</a>
+                             </li>-->
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"  style="color: white;">RETROUVEZ-NOUS</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> ShopOnline.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+
+    </body>
+</html>
+

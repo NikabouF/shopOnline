@@ -1,0 +1,799 @@
+#{extends 'main.html' /}
+
+<html>
+    <head>
+        <title>Catégorie de produits</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+        body {
+            font-family: "Times New Roman";
+            margin: 0;
+        }
+
+        /* Header/logo Title */
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: lightblue;
+            color: white;
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* Style the top navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Right-aligned link */
+        .navbar a.right {
+            float: right;
+        }
+
+        /* Column container */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: black;
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="navbar" style="font-size: 20px">
+            <!-- Brand -->
+            <div class="navbar-header">
+                <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: -30px"><strong>Online</strong></ul></ul>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <a class="nav-link" href="#" style="font-size: 20px;margin-right:20px"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
+                <a class="nav-link dropdown-toggle" href="#" style="font-size: 20px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-user"></span> Connexion</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Mon compte</a>
+                    <a class="dropdown-item" href="#">Déconnexion</a>
+                </div>
+                </li>
+            </div>
+        </div>
+        <br>
+        <!--"""""""""""""""""""""""""""""""""""""""Fin du navbar""""""""""""""""""""""""""""""""""""""""""""-->
+
+
+        <!--JE VOUDRAIS AFFICHER POUR CHAQUE CATÉGORIE, LES PRODUITS QUI Y SONT ENRÉGISTRES-->
+
+        <div class="container-fluid">
+
+
+            <!--Insertion d'image-->
+            <div id="block" class="bg">
+                <img class="img-responsive" src="../../../../../public/images
+                     /img/faire-son-shopping-comme-une-pro.jpg" alt="">
+            </div>
+            <!--Fin Insertion d'image-->
+
+            <!--Les catégories de produits-->
+
+            <div class="container">
+                <h3 style="font-family: cursive">Les catégories catégories de produits dont nous disposons</h3></br>
+
+                <div class="nav nav-tabs"></div>
+                <ul class="nav nav-tabs" id="myTabs">
+                    <li class="nav-items"><a class="nav-link" id="Alim-tab" data-toggle="tab" href="#Alim" role="tab" aria-controls="Alim" aria-selected="true">Alimentation générale</a></li>
+                    <li class="nav-items"><a class="nav-link" id="High-tab" data-toggle="tab" href="#High" role="tab" aria-controls="High" aria-selected="false">High Tech</a></li>
+                    <li class="nav-items"><a class="nav-link" id="Art-tab" data-toggle="tab" href="#Art" role="tab" aria-controls="Art" aria-selected="false">Arts&Décorations</a></li>
+                    <li class="nav-items"><a class="nav-link" id="Mode-tab" data-toggle="tab" href="#Mode" role="tab" aria-controls="Mode" aria-selected="false">Mode et Beauté</a></li>
+                    <li class="nav-items"><a class="nav-link" id="Vet-tab" data-toggle="tab" href="#Vet" role="tab" aria-controls="Vet" aria-selected="false">Vêtements pour nourrissons</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plus<span class="caret"></span></a>
+                        <div class="dropdown-menu">
+
+                            <a class="dropdown-item" href="#">Compléments alimentaires</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Meubles</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Électro-ménagers</a>
+                        </div>
+                    </li>
+
+                </ul>
+                </br>
+                <div class="tab-content" id="myTabContent0">
+
+                    <div class="tab-pane fade active" id="Alim" role="tabpanel" aria-labelledby="Alim-tab">
+                        <div class="panel">
+                            <div class="panel-heading" id="#Alim" style="background-color:lightcoral;color: white"><strong>Top Produits alimentaires</strong></div>
+
+                            <div class="panel-body" style="background-color: beige">
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/UT81mcPXgXaXXagOFbXx.jpg" style="width:49%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/cookies_bisson.png" style="width:45%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/cooperl-filet-mignon-a-la-moutarde_web%20-%20Copie.png" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/c700x420%20-%20Copie.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/2-Nouveau-produit-bio-avec-des-legumineuses-©Jardin-Bio%20-%20Copie.jpg" style="width:55%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/4cdc3b7e8fde6d097c07748d5f4663dd.jpg" style="width:70%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/000172440_5.jpg" style="width:75%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/10882.jpg" style="width:50%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="High" role="tabpanel" aria-labelledby="High-tab">
+
+                        <div class="panel">
+                            <div class="panel-heading" style="background-color:dodgerblue;color: white"><strong>Top Tendances high tech</strong></div>
+
+                            <div class="panel-body" style="background-color: beige">
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/des-ordinateurs-tablettes-1_4649580.jpg" style="width:49%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/des-ordinateurs-tablettes-7_4649592.jpg" style="width:75%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/high-tech-montres-connectees-trouver-des-produits-dam-sur-a-chemise-homme-avec-montre-connectee-avec-camera-1.jpg" style="width:50%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/pc-vs-tablette-vs-smartphone.jpg" style="width:90%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/ordinateur-high-tech-moderne.jpg" style="width:70%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/mini-chaine-hifi-murale.jpg" style="width:50%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/high-tech-montres-connectees-trouver-des-produits-agptek-sur-se-rapportant-a-chemise-homme-avec-montre-connectee-portable.jpg" style="width:50%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/bestbuy.jpg" style="width:50%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Produits</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="Art" role="tabpanel" aria-labelledby="Art-tab">
+
+                        <div class="panel">
+                            <div class="panel-heading" style="background-color:dodgerblue;color: white"><strong>Arts & Décorations</strong></div>
+
+                            <div class="panel-body" style="background-color: beige">
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/doctype-hi-res.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1468174482686-1047396f13b3.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1484101403633-562f891dc89a.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1497174247343-5d86ed5c6987.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1508341421810-36b8fc06075b.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1524699033748-844eb53756b0.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Décoration d'intérieur</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1508341421810-36b8fc06075b.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images
+                                                 /img/photo-1517722014278-c256a91a6fba.jpg" style="width:100%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Produits</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="Mode" role="tabpanel" aria-labelledby="Mode-tab">
+
+                        <div class="panel" style="padding: 10px;margin-bottom: 10px">
+                            <div class="panel-heading" style="background-color:deeppink;color: white;padding: 10px"><strong>Top Produits Mode et beauté</strong></div>
+                            <div class="panel-body" style="background-color: grey;padding: 10px">
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/40800791331.jpg" style="width:49%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/15-produits-de-beaute-de-luxe-qui-nous-font-rever.jpg" style="width:42%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Produits de beauté</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/petite-top-bardot-vert-structure-femme-a-la-mode-nouveaux-produits-10-elasthanne--1672-500x500_0.jpg" style="width:53%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/MP02807683.jpg" style="width:53%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/G_24778235_243_VFP_1.jpg" style="width:52%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/anti-age-produits-2015.png" style="width:97%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Produits anti-âge</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/43%20Banana%20Moon%20Intimates%20Lingerie%20Top%20Intimates%20Timeless%20Kelby%20beige%20-%20Produits%20de%20mode%20prix%20r%20duit%2029531.jpg" style="width:57%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                        <div class="card thumbnail">
+                                            <img class="card-img-top" src="../../../../../public/images/img/Homme%20Chemise%20manches%20longues%20Classique%20-%20France%20Top%20produits%20Vente%20en%20gros%2041716458%20Jack%20Jones%20V%20tements%20-%2042%204991.jpg" style="width:57%">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mini-chaine wif murale</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="Vet" role="tabpanel" aria-labelledby="Vet-tab">
+
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div></div>
+
+            </div>
+
+
+
+            <!--Fin des catégories-->
+
+
+
+
+
+
+
+
+            <!--"********************************************DEBUT DU 9EME BLOC****************************************************-->
+
+
+            <div style="padding: 0px; background-color: cadetblue;color: white;">
+                <h3 style="text-align: center">Réglez vos achats simplement</h3>
+
+                <div class="row" style="text-align: center">
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                        <h5><a>Mon porte-monnaie électronique</a></h5>
+                        <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:50%">
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-2 mb-1">
+                        <h5><a>Ma carte bancaire</a></h5>
+                        <img src="../../../../../public/images/img/transport-icon.png" style="width:50%">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--"********************************************FIN DU 9EME BLOC****************************************************-->
+
+
+            <!--"********************************************DEBUT DU BAS DE PAGE****************************************************-->
+
+            <!-- Footer -->
+            <footer class="footer">
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left">
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MON COMPTE</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a href="#">Mon panier</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <a href="#">Mon porte-monnaie électronique</a>
+                                    </p>
+
+                                </li>
+                                <li>
+
+                                </li>
+                                <li>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ShopOnline & CO</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a href="#">Le Shop</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <a href="#">Les autres sociétés</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <a href="#">Recrutement</a>
+                                    </p>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">PARTENAIRES</h5>
+
+                            <ul class="list-unstyled">
+
+                                <li>
+                                    <p>
+                                        <a href="#">Shopping Online</a>
+                                    </p>
+
+                                </li>
+                                <!-- <li>
+                                     <a href="#">Link 2</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">Link 3</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">Link 4</a>
+                                 </li>-->
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RETROUVEZ-NOUS</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                    </p>
+
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                    <a href="#"> ShopOnline.com</a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+
+            <!--"********************************************FIN DU BAS DE PAGE****************************************************-->
+
+        </div>
+
+
+    </body>
+</html>

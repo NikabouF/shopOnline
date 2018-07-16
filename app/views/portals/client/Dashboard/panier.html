@@ -1,0 +1,348 @@
+#{extends 'main.html' /}
+
+<html>
+    <head>
+        <title>Panier</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+        body {
+            font-family: "Times New Roman";
+            margin: 0;
+        }
+
+        /* Header/logo Title */
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: lightblue;
+            color: white;
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* Style the top navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Right-aligned link */
+        .navbar a.right {
+            float: right;
+        }
+
+        /* Column container */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: black;
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="navbar" style="font-size: 20px">
+            <!-- Brand -->
+            <div class="navbar-header">
+                <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: -30px"><strong>Online</strong></ul></ul>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <a class="nav-link" href="#" style="font-size: 20px;margin-right:20px"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
+                <a class="nav-link dropdown-toggle" href="#" style="font-size: 20px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-user"></span> Connexion</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Mon compte</a>
+                    <a class="dropdown-item" href="#">Déconnexion</a>
+                </div>
+                </li>
+            </div>
+        </div>
+        <br>
+        
+        <div class="row">
+
+            <div>
+                <h4 style="font-size: 2rem;font-family: fantasy;margin-left: 160px">Mon panier</h4></br>
+
+            </div></br>
+
+            <div class="" style="margin-top:5%">
+
+                <div class="card-body">
+
+                    <div class="card w-70">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    </br>
+
+                    <div class="card w-70">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                        </div>
+                    </div>
+
+                    </br>
+                    <div class="card w-70">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    </br>
+
+                </div>
+            </div>
+
+            <div class="form-row" style="margin-top: 450px">
+                <div class="form-group col-md-4">
+                    <a href="#"><button class="btn btn-outline-primary">Continuer mes achats</button></a>
+                </div>
+
+                <div class="form-group col-md-8">
+                    <a href="@{controllers.portals.client.Dashboard.achatClient()}"><button class="btn btn-outline-success">Terminer mes achats</button></a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--"********************************************DEBUT DU 9EME BLOC****************************************************-->
+
+
+        <div style="padding: 0px; background-color: cadetblue;color: white;">
+            <h3 style="text-align: center">Réglez vos achats simplement</h3></br>
+
+            <div class="row" style="text-align: center">
+                <div class="col-3">
+
+                </div>
+
+                <div class="col-3">
+                    <h5><a>Mon porte-monnaie électronique</a></h5>
+                    <img src="../../../../../public/images/img/icon-Payment-3.png" style="width:50%">
+                </div>
+
+                <div class="col-3">
+                    <h5><a>Ma carte bancaire</a></h5>
+                    <img src="../../../../../public/images/img/transport-icon.png" style="width:50%">
+                </div>
+
+                <div class="col-3">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!--"********************************************FIN DU 9EME BLOC****************************************************-->
+
+
+
+        <!--"********************************************DEBUT DU BAS DE PAGE****************************************************-->
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MON COMPTE</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Mon panier</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Mon porte-monnaie électronique</a>
+                                </p>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">AFRIBILLS & CO</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">La société</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Les autres sociétés</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Recrutement</a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">PARTENAIRES</h5>
+
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>
+                                    <a href="#">Vendez sur CountryPocket</a>
+                                </p>
+
+                            </li>
+                            <!-- <li>
+                                 <a href="#">Link 2</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 3</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 4</a>
+                             </li>-->
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RETROUVEZ-NOUS</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> ShopOnline.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+        <!--"********************************************FIN DU BAS DE PAGE****************************************************-->
+
+
+    </body>
+
+</html>

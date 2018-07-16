@@ -1,0 +1,396 @@
+#{extends 'main.html' /}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Page d'administrattion de ShopOnline</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* Style the body */
+            body {
+                font-family: "Times New Roman";
+                margin: 0;
+            }
+
+            /* Header/logo Title */
+            .header {
+                padding: 50px;
+                text-align: center;
+                background: lightblue;
+                color: white;
+            }
+
+            /* Increase the font size of the heading */
+            .header h1 {
+                font-size: 40px;
+            }
+
+            /* Style the top navigation bar */
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            /* Style the navigation bar links */
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+
+            /* Right-aligned link */
+            .navbar a.right {
+                float: right;
+            }
+
+            /* Change color on hover */
+            .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Column container */
+            .row {
+                display: -ms-flexbox; /* IE10 */
+                display: flex;
+                -ms-flex-wrap: wrap; /* IE10 */
+                flex-wrap: wrap;
+            }
+
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+                -ms-flex: 30%; /* IE10 */
+                flex: 10%;
+                background-color: #f1f1f1;
+                padding: 20px;
+            }
+
+            /* Main column */
+            .main {
+                -ms-flex: 70%; /* IE10 */
+                flex: 70%;
+                background-color: white;
+                padding: 20px;
+            }
+
+            /* Fake image, just for this example */
+            .fakeimg {
+                background-color: #aaa;
+                width: 100%;
+                padding: 20px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                background: black;
+            }
+
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+                .row {
+                    flex-direction: column;
+                }
+            }
+
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+                .navbar a {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="header" style="background: bisque;padding: 0px">
+            <h1 style="color: #122b40; font-family: fantasy">Page d'administration de ShopOnline</h1>
+        </div>
+
+        <div class="navbar" style="font-size: 20px">
+            <a class="nav-link" href="@{controllers.portals.admin.Dashboard.index()}">Accueil</a>
+            <a href="@{controllers.portals.admin.Dashboard.enregCat()}">Catégories</a>
+            <a href="@{controllers.portals.admin.Dashboard.enregProd()}">Produits</a>
+            <a href="@{controllers.portals.admin.Dashboard.enregDroitProfil()}">Droits et profils</a>
+            <a href="@{controllers.portals.admin.Dashboard.actionsA()}">Comptes</a>
+            <a href="@{controllers.portals.admin.Dashboard.consultations()}">Consultations</a>
+            <a href="#">Journalisation</a>
+            <a href="@{Secure.logout()}" class="right">Déonnexion</a>
+        </div>
+        <div class="container">
+            <h3 style="font-family: cursive;color:darkcyan">Gestion de ShopOnline</h3>
+            <form style="font-size:20px" enctype="multipart/form-data" action="@{controllers.portals.admin.Categories.saveCategorie()}" method="post">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <h3 style="text-align:center;color:blue">Enrégistrer une catégorie</h3>
+                    </div>
+                    <div class="col-sm-5">
+                        <label class="control-label" for="libCategorie">Libellé de la catégorie:</label>
+                        <input name="libCategorie" type="text" class="form-control" id="libCategorie">
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label" for="description">Description :</label>
+                        <input name="description" type="text" class="form-control" id="description">
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+                </br>
+                <div class="form-group"></br>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-3"  style="margin-top: 2rem">
+                        <button type="submit" class="btn btn-success">Enregistrer</button></br>
+                    </div>  </br>
+                    <div class="col-sm-3"  style="margin-top: 2rem">
+                        <button type="reset" class="btn btn-primary">Annuler</button>
+                    </div>
+                </div>
+            </form> 
+            </br>
+            </br>
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <h3 style="color:midnightblue">Liste des catégories de produits</h3>
+                </div>
+                <div class="col-sm-8">
+                </div>
+            </div>
+            <!--Le tableau qui affiche les catégories enrégistrées-->
+
+            <table class="table table-bordered">
+                <thead style="font-size:20px">
+                    <tr>
+                        <th>Libellé de la catégorie</th>
+                        <th>Description de la catégorie</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size:18px">
+                    #{list items:categories, as : 'categorie'}
+                    <tr>
+                        <td>${categorie.libCategorie}</td>
+                        <td>${categorie.description}</td>
+                        <td>
+                            <button class="btn btn-info edit-button" data-id="${categorie.id}" onclick="showEditModal('${categorie.id}', '${categorie.libCategorie}', '${categorie.description}')"><span class="glyphicon glyphicon-pencil"></span> Modifier</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger delete-button" data-id="${categorie.id}" onclick="showModal('${categorie.id}')"><span class="glyphicon glyphicon-trash"></span> Supprimer</button>
+                        </td>
+                    </tr>
+                    #{/list}
+                </tbody>
+            </table>
+        </div>
+
+        <!--******************************************************************************************************************"""""""""""-->       
+        <!-- Modifier la catégorie -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog"  role="document">
+                <div class="modal-content">
+                    <form action="@{controllers.portals.admin.Categories.saveEditCategorie()}" method="post">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Modifier la catégorie</h3>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden"  id="editID" name="id">
+                            <div class="form-group">
+                                <label class="control-label" for="libelle">Libellé de la catégorie </label>
+                                <input name="libelle" type="text" class="form-control" id="libelle">
+                            </div>                           
+                            <div class="form-group">
+                                <label class="control-label" for="des">Description </label>
+                                <input name="des" type="text" class="form-control" id="des">
+                            </div>
+                            </br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" style="width:75px">Modifier</button>
+                            <button class="btn btn-danger" data-dismiss="modal" style="width:75px">Annuler</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <!--******************************************************************************************************************"""""""""""-->       
+        <!-- Supprimer la catégorie -->
+
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog"  role="document">
+                <div class="modal-content">
+                    <form action="@{controllers.portals.admin.Categories.deleteCat()}" method="post">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Supprimer cette catégorie ?</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Tous les produits de cette catégorie seront également supprimés... Souhaitez-vous continuer ? </h4>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" id="categorieID" name="id">
+                            <button class="btn btn-primary" type="submit" style="width:55px">Oui</button>
+                            <button class="btn btn-danger" data-dismiss="modal" style="width:55px">Non</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!--*************************************************************************************************************************-->        
+
+
+        <!-- Footer -->
+        <footer class="footer" style="padding:0px">
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white;">NOTRE COMPTE</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Nos ventes</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Nos bénéfices</a>
+                                </p>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"  style="color: white;">ShopOnline & Co</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">La société</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Les autres sociétés</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Recrutements</a>
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"  style="color: white;">PARTENAIRES</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Online Shopping</a>
+                                </p>
+
+                            </li>
+                            <!-- <li>
+                                 <a href="#">Link 2</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 3</a>
+                             </li>
+                             <li>
+                                 <a href="#">Link 4</a>
+                             </li>-->
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"  style="color: white;">RETROUVEZ-NOUS</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                </p>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+            <!-- Footer Links -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> ShopOnline.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+        <script>
+
+            function showEditModal(id, libelle, des) {
+                $("#editID").val(id);
+                $("#libelle").val(libelle);
+                $("#des").val(des);
+                $("#myModal").modal("show");
+            }
+
+            function showModal(id) {
+                $("#categorieID").val(id);
+                $("#delete-modal").modal("show");
+            }
+
+
+        </script>
+
+    </body>
+</html>
+

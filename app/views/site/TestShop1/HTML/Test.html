@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../../../../public/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../../../public/lib/Style.css">
+
+    <style>
+
+        #msform {
+            width: 400px;
+            margin: 50px auto;
+            text-align: center;
+            position: relative;
+        }
+        #msform fieldset {
+            background: white;
+            border: 0 none;
+            border-radius: 3px;
+            box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+            padding: 20px 30px;
+            box-sizing: border-box;
+            width: 80%;
+            margin: 0 10%;
+
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+        /*inputs*/
+        #msform input, #msform textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: montserrat;
+            color: #2C3E50;
+            font-size: 13px;
+        }
+        /*buttons*/
+        #msform .action-button {
+            width: 100px;
+            background: #27AE60;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 1px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+        #msform .action-button:hover, #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+        }
+        /*headings*/
+        .fs-title {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+        .fs-subtitle {
+            font-weight: normal;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        /*progressbar*/
+        #progressbar {
+            margin-bottom: 30px;
+            overflow: hidden;
+            /*CSS counters to number the steps*/
+            counter-reset: step;
+        }
+        #progressbar li {
+            list-style-type: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 9px;
+            width: 33.33%;
+            float: left;
+            position: relative;
+        }
+        #progressbar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 20px;
+            line-height: 20px;
+            display: block;
+            font-size: 10px;
+            color: #333;
+            background: white;
+            border-radius: 3px;
+            margin: 0 auto 5px auto;
+        }
+        /*progressbar connectors*/
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            left: -50%;
+            top: 9px;
+            z-index: -1; /*put it behind the numbers*/
+        }
+        #progressbar li:first-child:after {
+            /*connector not needed before the first step*/
+            content: none;
+        }
+        /*marking active/completed steps green*/
+        /*The number of the step and the connector before it = green*/
+        #progressbar li.active:before,  #progressbar li.active:after{
+            background: #27AE60;
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="row">
+
+    <!-- MultiStep Form -->
+
+        <!-- /.MultiStep Form -->
+
+        <div class="col-8" style=" background-color: silver">
+
+            <h4 style="font-size: 2.5rem;font-family: fantasy;margin-left: 160px">Finaliser mes achats</h4></br>
+
+            <form style="margin-left: 80px;" id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li>Panier</li>
+                    <li>Détails client</li>
+                    <li class="active">Mode de livraison</li>
+                    <li>Paiement</li>
+                    <li>Récapitulatif</li>
+                </ul>
+
+                <fieldset>
+
+                    <div class="form-group" style="padding:10px 20px 0px;margin-right: 15px">
+                        <div class="form-checkform-group" style="margin-left: 0px;margin-top: 44px;margin-bottom: -43px;">
+                            <input style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio100">
+                            <label class="form-check-label" for="radio100"></label>
+
+                        </div>
+                        <input type="text" class="form-control" placeholder="Retrait sur place" readonly>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 35px;margin-right: 35px;margin-left: 21px">
+
+                        <div class="form-checkform-group" style="margin-left: -12px;margin-top: 44px;margin-bottom: -43px;">
+                            <input style="width:auto;margin-left: -8px" class="form-check-input" name="group100" type="radio" id="radio101">
+                            <label class="form-check-label" for="radio101"></label>
+
+                        </div>
+                        <input type="text" class="form-control" placeholder="Livraison à domicile" readonly>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputadr">Adresse de livraison</label>
+                            <input type="text" class="form-control" id="inputadr">
+                        </div>
+                        <div class="form-group col-md-4" style="margin-top: 35px">
+                            <a href="#"><button class="btn btn-default">Modifier</button></a>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="button" name="previous" class="previous action-button-previous" value="Retour au détails client"/>
+                            <!--<a href="#"><button class="btn btn-outline-primary">Retour au détail client</button></a>-->
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <input type="button" name="next" class="next action-button" value="Continuer sur le mode de paiement"/>
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+
+                </fieldset>
+
+            </form>
+
+
+
+            <!--Radio group-->
+
+
+        </div>
+
+        <div class="col-4">
+
+            <div class="card w-80">
+
+                <div class="card-body">
+                    <h5 class="card-title">Mon panier</h5>
+
+                    <div class="card w-50">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    </br>
+
+                    <div class="card w-50">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                        </div>
+                    </div>
+
+                    </br>
+                    <div class="card w-50">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    </br>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+<script src="../../../../../public/jquery/jquery-3.3.1.js"></script>
+<script src="../../../../../public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../../../../public/jquery/popper.min.js"></script>
+<script src="../../../../../public/lib/JsGalerie.js"></script>
+
+<script>
+
+    //jQuery time
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var left, opacity, scale; //fieldset properties which we will animate
+    var animating; //flag to prevent quick multi-click glitches
+
+    $(".next").click(function(){
+        if(animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale current_fs down to 80%
+                scale = 1 - (1 - now) * 0.2;
+                //2. bring next_fs from the right(50%)
+                left = (now * 50)+"%";
+                //3. increase opacity of next_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                    'transform': 'scale('+scale+')',
+                    'position': 'absolute'
+                });
+                next_fs.css({'left': left, 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function(){
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    $(".previous").click(function(){
+        if(animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+
+        //de-activate current step on progressbar
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale previous_fs from 80% to 100%
+                scale = 0.8 + (1 - now) * 0.2;
+                //2. take current_fs to the right(50%) - from 0%
+                left = ((1-now) * 50)+"%";
+                //3. increase opacity of previous_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({'left': left});
+                previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function(){
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    $(".submit").click(function(){
+        return false;
+</html>

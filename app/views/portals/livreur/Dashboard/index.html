@@ -1,0 +1,229 @@
+#{extends 'main.html' /}
+
+<html>
+    <head>
+        <title>Gestion de ShopOnline</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+
+        /* Header/logo Title */
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: lightblue;
+            color: white;
+        }
+
+    </style>
+
+    <body>
+
+
+        <div class="header" style="background: antiquewhite;padding: 0px">
+            <h1 style="color: #122b40; font-family: fantasy">Page de gestion des livraisons de ShopOnline</h1>
+        </div>
+
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop<a class="navbar-brand" style="color: palevioletred; font-size: 40px"><strong>Online</strong></a></strong></a>
+                </div>
+
+                <!-- Links -->
+                <ul class="nav navbar-nav" style="font-size: 20px">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@{controllers.portals.livreur.Dashboard.index}">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Valider une Livraison</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="@{controllers.portals.livreur.Dashboard.consultation}">Consultation</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Notifications</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Connexion
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Mon compte</a>
+                            <a class="dropdown-item" href="#">Déconnexion</a>
+
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <br>
+
+        <!--"""""""""""""""""""""""""""""""""""""""Fin du navbar""""""""""""""""""""""""""""""""""""""""""""-->
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="main">
+                    <h2>Notre agence</h2>
+                    <div><img src="@{'public/images/img/boutique-maroquinerie-sac-misako-france-bordeaux-02.png'}" alt="Notre agence"></div>
+                    <p><h4>Descriptif</h4></p>
+                    <p>Notre agence......................</p>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--*****************************************************************************************************************************-->
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MON COMPTE</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">Mon panier</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Mon porte-monnaie électronique</a>
+                                </p>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">AFRIBILLS & CO</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a href="#">La société</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Les autres sociétés</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#">Recrutement</a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">PARTENAIRES</h5>
+
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>
+                                    <a href="#">Vendez sur CountryPocket</a>
+                                </p>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RETROUVEZ-NOUS</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-home"></i> Adidogomé, Lomé-TOGO</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-envelope"></i> shopOnline.com</a>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-phone"></i> + 228 22 02 10 20</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a><i class="fa fa-print"></i> + 228 91 20 10 30 </a>
+                                </p>
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> ShopOnline.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+
+    </body>
+</html>
