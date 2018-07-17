@@ -7,6 +7,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
+
+
+        .carousel-page
+        {
+            width:100%;
+            height:400px;
+            background-color:#5f666d;
+            color:white;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -40,7 +50,7 @@
         .navbar a {
             float: left;
             display: block;
-            color: white;
+            color: beige;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
@@ -156,7 +166,7 @@
                 <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: -30px"><strong>Online</strong></ul></ul>
             </div>
             <div class="nav navbar-nav navbar-right">
-    
+
                 <a class="nav-link" href="#" style="font-size: 20px;margin-right:20px"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
                 <a class="nav-link dropdown-toggle" href="#" style="font-size: 20px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="glyphicon glyphicon-user"></span> Connexion</a>
@@ -167,11 +177,59 @@
             </div>
         </div>
         <!--Insertion d'image-->
-        <div id="block" class="bg">
+        <!--<div id="block" class="bg">
             <img class="img-responsive" src="../../../../../public/images/img/faire-son-shopping-comme-une-pro.jpg" style="margin-left:60px">
+        </div>-->
+        <!--La carousel de haut de page-->
+
+        <div id="my_carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+            <!-- Bulles -->
+            <ol class="carousel-indicators">
+                <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#my_carousel" data-slide-to="1"></li>
+                <li data-target="#my_carousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <!-- Page 1 -->
+                <div class="item active">  
+                    <div class="carousel-page">
+                        <img src="../../../../../public/images/img/photo-1499781350541-7783f6c6a0c8.jpg" class="img-responsive" style="margin:0px auto;width:100%" />
+                    </div> 
+                    <div class="carousel-caption">Page 1 de présentation</div>
+                </div>   
+                <!-- Page 2 -->
+                <div class="item"> 
+                    <div class="carousel-page"><img src="../../../../../public/images/img/article-VE-ligne-insertech-2017-825x340.jpg" class="img-responsive img-rounded" 
+                                                    style="margin:0px auto;width:100%"  /></div> 
+                    <div class="carousel-caption">Page 2 de présentation</div>
+                </div>  
+                <!-- Page 3 -->
+                <div class="item">  
+                    <div class="carousel-page">
+                        <img src="../../../../../public/images/img/accro-au-shopping-en-ligne-c-est-grave-docteur.jpeg" class="img-responsive img-rounded" 
+                             style="margin:0px auto;max-height:100%;width:100%"  />
+                    </div>  
+                    <div class="carousel-caption">Page 2 de présentation</div>
+                </div>     
+            </div>
+            <!-- Contrôles -->
+            <a class="left carousel-control" href="#my_carousel" data-slide="prev" style="width: 2%">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#my_carousel" data-slide="next" style="width: 2%">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
         </div>
+
+        <!--Navbar-->
+     
+        <!--/.Navbar-->
+
+
         <!--Fin Insertion d'image-->
         <div class="container-fluid">
+            <!--Le boutton de mega menu-->
             <div class="row">
                 <div class="col-3">
                     <button style=";padding:8px 20px;width:80%;margin:8px 0px;margin-left:60px;margin-top:-8px;
@@ -190,6 +248,180 @@
                 <!--Fin insertion de produit en caroussel-->
                 <!--3eme bloc-->
             </div>
+
+
+            <div id="exemple-carrousel" class="carousel slide" data-ride="carousel"> 
+
+                <ol class="carousel-indicators" style="bottom:-15px"> 
+                    <li data-target="#exemple-carrousel" data-slide-to="0" 
+                        class="active"></li> 
+                    <li data-target="#exemple-carrousel" data-slide-to="1"></li> 
+                    <li data-target="#exemple-carrousel" data-slide-to="2"></li> 
+                </ol> 
+
+
+                <div class="carousel-inner slide date-ride" style="margin-left: 150px;width:80%"> 
+                    <div class="item active" style="margin-bottom:-25px"> 
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/phone_1.jpg" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Un Phone</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/phone_2.jpg" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Un autre Phone</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/pc_1.jpg" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Une tablette</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/pc_1.jpg" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Un pc</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div> 
+                    <!--Deuxieme lot d'images-->
+                    <div class="item" style="margin-bottom:-25px"> 
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/41400468230.jpg" style="width: 40%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Un Habit</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/chem_4.jpeg" style="width: 45%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Une chemise</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/shoes_4.jpg" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Une chaussure</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/petite-top-bardot-vert-structure-femme-a-la-mode-nouveaux-produits-10-elasthanne--1672-500x500_0.jpg" style="width: 45%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bardot pour femme</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!--Dernier lot d'iamges-->
+                    <div class="item" style="margin-bottom:-25px"> 
+
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/Lot-de-4-pots-125g-Yaourt-aux-fruits-au-lait-entier_product.png" style="width: 40%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Un Pot de yaourt</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/g_2457011_yaourt-grec-0-.jpg" style="width: 40%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Yaourt grec</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/cooperl-filet-mignon-a-la-moutarde_web - Copie.png" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Un amuse-gueule</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 20px">
+                                <div class="card thumbnail">
+                                    <img class="card-img-rounded" src="../../../../../public/images/img/Rayon-cremerie-les-cremes-desserts-caramel-au-beurre-sale-Ker-Ronan_gallerie_1.jpg" style="width: 70%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Creme</h5>
+                                        <p class="card-text">A prix raisonnable</p>
+                                        <a href="#" class="btn btn-primary">Ajouter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div> 
+                </div> 
+
+
+                <a class="left carousel-control" href="#exemple-carrousel" 
+                   data-slide="prev" style="width: 10%"> 
+                    <span class="glyphicon glyphicon-chevron-left"></span> 
+                </a> 
+                <a class="right carousel-control" href="#exemple-carrousel" 
+                   data-slide="next" style="width: 10%"> 
+                    <span class="glyphicon glyphicon-chevron-right"></span> 
+                </a> 
+            </div>
+
 
 
             <div class="row">

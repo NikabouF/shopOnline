@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="@{'/public/stylesheets/monStyle.css'}" rel="stylesheet" type="text/css"/>
         <link href="../../../../../public/lib/bootstrap.css" rel="stylesheet" type="text/css"/> 
-        
+        <link href="../../../../../public/stylesheets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
 
@@ -14,12 +15,11 @@
             <div class="container-fluid">
                 <!-- Brand -->
                 <div class="navbar-header">
-                    <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: 0px"><strong>Online</strong></ul></ul>
+                    <ul><ul class="navbar-brand" style="color: dodgerblue; font-size: 40px"><strong>Shop</strong></ul><ul class="navbar-brand" style="color: hotpink; font-size: 40px;margin-left: -35px"><strong>Online</strong></ul></ul>
                 </div>
                 <!-- Links -->
                 <div class="nav navbar-nav navbar-right">
-                    <a class="nav-link" href="#" style="font-size: 20px;margin-right:20px"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
-                    <a class="nav-link" href="#" style="font-size: 20px"><span class="glyphicon glyphicon-user"></span> Connexion</a>
+                    <a class="nav-link" href="#" style="font-size: 20px"><span class="glyphicon glyphicon-user"></span>  Déconnexion</a>
                 </div>
             </div>
         </nav>
@@ -29,130 +29,123 @@
         <br>
 
         <div class="container">
+            <div class="row form-group">
+                <div class="col-sm-8 col-12">
+                    <h2 style="color: black;margin-bottom: 50px;margin-right: 390px"><strong>Finaliser mes achats</strong></h2>
+                    <div  style=" width: 100%;">
+                        <ul  id="progressbar" style="padding-top: 25px; padding-bottom: 0px;text-align:center;">
 
-            <div class="row">
+                            <li class="itl active" style="color: black;font-size: 12px;" >Panier</li>
+                            <li class="itl" style="color: black;font-size: 12px">Détails client</li>
+                            <li class="itl" style="color: black;font-size: 12px">Mode de livraison</li>
+                            <li class="itl" style="color: black;font-size: 12px">Paiement</li>
+                            <li class="itl" style="color: black;font-size: 12px">Récapitulatif</li>
 
-                <div class="col-9">
+                        </ul>
+                    </div>
+                    <!-- fieldsets -->
 
-
-                    <form class="col- col-md-6 col-lg-12" id="msform">
-                        <h2 style="color: black;margin-bottom: 50px;margin-right: 390px"><strong>Finaliser mes achats</strong></h2>
-                        <div  style=" width: 100%;">
-                            <ul  id="progressbar" style="padding-top: 25px; padding-bottom: 15px;text-align:center">
-                                <li class="itl active" style="color: black;font-size: 14px" >Panier</li>
-                                <li class="itl" style="color: black;font-size: 14px">Détails client</li>
-                                <li class="itl" style="color: black;font-size: 14px">Mode de livraison</li>
-                                <li class="itl" style="color: black;font-size: 14px">Paiement</li>
-                                <li class="itl" style="color: black;font-size: 14px">Récapitulatif</li>
-                            </ul>
-                        </div>
-
-                        <!-- fieldsets -->
-
-                        <!--La page de panier-->
-
+                    <!--La page de panier-->
+                    <form class="col-sm-12 col-12" id="msform">
                         <fieldset>
-
-                            <h2 class="fs-title">Create your account</h2>
-                            <h3 class="fs-subtitle">This is step 1</h3>
-                            <input type="text" name="email" placeholder="Email" />
-                            <input type="password" name="pass" placeholder="Password" />
-                            <input type="password" name="cpass" placeholder="Confirm Password" />
-                            <input type="button" name="next" class="next action-button" value="Next" />
-
-
-
+                            <h2 class="fs-title">Votre panier est prêt</h2>
+                            <h3 class="fs-subtitle">Nous allons confirmer votre commande</h3>
+                            <p></p>
+                            <a href="@{controllers.portals.client.Dashboard.panier}"><button class="btn btn-success" style="width:30%">Retour</button></a>
+                            <input type="button" name="next" class="next action-button" value="Suivant" />
                         </fieldset>
 
-                        <fieldset style="padding: 0px 30px">
-
+                        <fieldset>
                             <h2 class="fs-title" style="text-align:center;margin-top:10px">Détails client</h2>
                             </br>
-                            <div class="form-check" style="">
-                                <input onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio10">
-                                <label class="form-check-label" for="radio10">J'ai un compte</label></br>
+                            <div>
+                                <div class="form-check" style="padding-left: 3.25rem">
+                                    <input onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio10">
+                                    <label class="form-check-label" for="radio10" style="margin-left:20px">J'ai un compte</label></br>
+                                </div>
+
+                                <!--La première partie, jai un compte-->
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="inputEm">Email</label>
+                                        <input type="text" name="email" style="padding:5px" id="inputEm" placeholder="johnson@gmail.com"/>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputEm1">Mot de passe</label>
+                                        <input type="password" style="padding:5px"style="padding:5px" id="inputEm1" name="pass"/>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary" style="width:100%">Se Connecter</button>
+                                    </div>
+                                </div>
+                                <!--Fin de la première partie-->
                             </div>
-
-                            <!--La première partie, jai un compte-->
-                            <div class="row">
-
-                                <div class="col-6">
-                                    <label for="inputEm">Email</label>
-                                    <input type="text" name="email" style="padding:5px" id="inputEm" placeholder="johnson@gmail.com"/>
-                                </div>
-
-                                <div class="col-6">
-                                    <label for="inputEm1">Mot de passe</label>
-                                    <input type="password" style="padding:5px"style="padding:5px" id="inputEm1" name="pass"/>
-                                </div>
-
-                                <div >
-                                    <button type="submit" class="btn btn-primary">Se Connecter</button>
-                                </div>
-                            </div>
-                            <!--Fin de la première partie-->
-
                             </br>
 
                             <!--Deuxème partie je n'ai pas de compte-->
-
-                            <div class="form-check" style="">
-                                <input onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio101">
-                                <label class="form-check-label" for="radio101">Je n'ai pas de compte</label></br>
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-6">
-                                    <label for="inputnom">Nom</label>
-                                    <input type="text" style="padding:5px" class="form-control" id="inputnom">
+                            <div>
+                                <div class="form-check" style="padding-left: 3.25rem">
+                                    <input onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio101">
+                                    <label class="form-check-label" for="radio101" style="margin-left:20px">Je n'ai pas de compte</label></br>
                                 </div>
 
-                                <div class="col-6">
-                                    <label for="inputPren">Prénom(s)</label>
-                                    <input type="text" style="padding:5px" class="form-control" id="inputPren">
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="inputnom">Nom</label>
+                                        <input type="text" style="padding:5px" class="form-control" id="inputnom">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputPren">Prénom(s)</label>
+                                        <input type="text" style="padding:5px" class="form-control" id="inputPren">
+                                    </div>
                                 </div>
 
-                            </div>
-
-                            <div class="col-12">
-                                <label for="inputEmail2">Email</label>
-                                <input type="email" style="padding:5px" class="form-control" id="inputEmail2" placeholder="johnson@gmail.com">
-                            </div>
-
-                            <div class="col-12">
-                                <label for="inputTel">Téléphone</label>
-                                <input type="tel" style="padding:5px" class="form-control" id="inputTel">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="inputville">Ville</label>
-                                    <input type="text" style="padding:5px" class="form-control" id="inputville">
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="inputEmail2">Email</label>
+                                        <input type="email" style="padding:5px" class="form-control" id="inputEmail2" placeholder="johnson@gmail.com">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputTel">Téléphone</label>
+                                        <input type="tel" style="padding:5px" class="form-control" id="inputTel">
+                                    </div>
                                 </div>
 
-                                <div class="col-6">
-                                    <label for="inputQtier">Quartier</label>
-                                    <input type="text" style="padding:5px" class="form-control" id="inputQtier">
+                                <div class="row form-group">
+                                    <label class="control-label" for="adresseAd">Adresse</label>
+                                    <input name="adresse" type="text" class="form-control" id="adresseAd" required>
                                 </div>
 
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label class="control-label" for="sexe">Sexe</label>
+                                        <select name="sexe" class="form-control">
+                                            <option selected value="Masculin">Masculin</option>
+                                            <option value="Feminin">Féminin</option>
+                                            <option value="Inconnu">Je ne sais pas</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label" for="loginAd">Login</label>
+                                        <input name="login" type="text" class="form-control" id="loginAd" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="inputMdp">Mot de passe</label>
+                                        <input type="password" style="padding:5px" class="form-control" id="inputMdp">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="inputMdp2">Confirmation du mot de passe</label>
+                                        <input type="password" style="padding:5px" class="form-control" id="inputMdp2">
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="inputMdp">Mot de passe</label>
-                                    <input type="password" style="padding:5px" class="form-control" id="inputMdp">
-                                </div>
-
-                                <div class="col-6">
-                                    <label for="inputMdp2">Confirmation du mot de passe</label>
-                                    <input type="password" style="padding:5px" class="form-control" id="inputMdp2">
-                                </div>
-                            </div>
-                            <input type="button" name="previous" class="previous action-button "value="Previous" />
-
-                            <input type="button" name="next" class="next action-button" value="Next" />
-
+                            <input type="button" name="previous" class="previous action-button "value="Retour au panier" />
+                            <input type="button" name="next" class="next action-button" value="Continuer sur le mode de livraison" />
 
                             <!--Fin de la deuxième partie-->
 
@@ -179,6 +172,7 @@
                                 </div>
                                 <input type="text" class="form-control" style="padding:10px" placeholder="Livraison à domicile" readonly>
                             </div>
+                            
                             <div class="form-row">
                                 <div class="form-group col-md-8">
                                     <label for="inputadr">Adresse de livraison</label>
@@ -188,17 +182,9 @@
                                     <a href="#"><button class="btn btn-default">Modifier</button></a>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <a href="#"><button class="btn btn-outline-primary">Retour au détail client</button></a>
-                                </div>
-
-                                <div class="form-group col-md-8">
-                                    <a href="#"><button class="btn btn-outline-success">Continuer sur le mode de paiement</button></a>
-                                </div>
-                            </div>
-                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                            <input type="button" name="next" class="next action-button" value="Next" />
+                            
+                            <input type="button" name="previous" class="previous action-button" value="Retour au détails client" />
+                            <input type="button" name="next" class="next action-button" value="Continuer sur le mode de paiement" />
 
                         </fieldset>
 
@@ -258,21 +244,8 @@
                                     <a href="#"><button class="btn btn-default">Modifier</button></a>
                                 </div>
                             </div>
-
-
-                            <div class="row">
-                                <div class="col-4">
-                                    <a href="#"><button class="btn btn-outline-primary">Retour au mode de livraison</button></a>
-                                </div>
-
-                                <div class="col-8">
-                                    <a href="#"><button class="btn btn-outline-success">Terminer mon achat</button></a>
-                                </div>
-
-                            </div>
-
-                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                            <input type="button" name="next" class="next action-button" value="Next" />
+                            <input type="button" name="previous" class="previous action-button" value="Retour au mode de livraison" />
+                            <input type="button" name="next" class="next action-button" value="Terminer mon achat" />
 
                         </fieldset>
 
@@ -319,22 +292,8 @@
                             </div>
 
 
-                            <div class="row">
-                                <div class="col-4">
-                                    <a href="#"><button class="btn btn-outline-primary">Retour au mode de paiement</button></a>
-                                </div>
-
-                                <div class="col-8">
-                                    <a href="#"><button class="btn btn-outline-success">Confirmer ma commande</button></a>
-                                </div>
-
-                            </div>
-
-
-
-
-                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                            <input type="button" name="previous" class="previous action-button" value="Retour au mode de paiement" />
+                            <input type="submit" name="submit" class="submit action-button" value="Confirmer ma commande" />
                         </fieldset>
 
                     </form>
@@ -342,12 +301,12 @@
 
                 </div>
 
-                <div class="col-3" style="margin-left: 0px;margin-right: 0px;margin-bottom: -75px;padding-right: 0px;">
+                <div class="col-sm-4" style="margin-left: 0px;margin-right: 0px;margin-bottom: -75px;padding-right: 0px;margin-top:-100px">
 
                     <div class="card w-75" style="margin-top: 60px">
 
                         <div class="card-body" style="padding: 0.25rem">
-                            <h5 class="card-title">Mon panier</h5>
+                            <h5 class="card-title" style="font-size:20px;text-align:center"><strong>Mon panier</strong></h5>
 
                             <div class="card w-50">
                                 <div class="card-body">
